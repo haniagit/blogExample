@@ -1,9 +1,20 @@
 package com.example.springExample.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Post {
     private String title;
     private String description;
     private String author;
+    //zmienna statyczna będzie taka sama dla wszystkich obiektow
+    private static List<Post> allPosts = new ArrayList<>();
+
+
+    public static List<Post> findAll(){
+        return allPosts;
+    }
+
 
     public Post() {
     }
@@ -12,6 +23,8 @@ public class Post {
         this.title = title;
         this.description = description;
         this.author = author;
+        allPosts.add(this);
+
     }
 
     public String getTitle() {
@@ -40,6 +53,6 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Autor: "+ getAuthor()+" Tytuł: "+getTitle()+" Opis: "+getDescription();
+        return "Autor: "+ getAuthor()+ " Tytuł: "+getTitle()+ " Opis: "+getDescription();
     }
 }

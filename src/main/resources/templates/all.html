@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Wszystkie posty</h1>
+
+<table>
+    <!--table row-->
+    <tr>
+        <!--header-->
+        <th>Title</th>
+        <th>Description</th>
+        <th>Author</th>
+    </tr>
+    <!--składnia Thymeleafowa, oznacza eacha na html-->
+    <tr th:each="post : ${posts}">
+        <!--td: table data-->
+        <!--post.title = skrócona składnia do post.getTitle-->
+        <td th:text="${post.title}"></td>
+        <td th:text="${post.description}"></td>
+        <td th:text="${post.author}"></td>
+    </tr>
+</table>
+
+<a href="/">back</a>
+
+</body>
+</html>

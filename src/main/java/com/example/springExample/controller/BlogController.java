@@ -24,4 +24,12 @@ public class BlogController {
         modelMap.put("newPost",newPost);
         return "show";
     }
+
+    @GetMapping("/all")
+    public String all(ModelMap modelMap){
+        modelMap.put("posts", Post.findAll());
+        return "all";
+    }
+
 }
+

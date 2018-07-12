@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BlogController {
 
 
-    @GetMapping("/")
+    @GetMapping("/main")
    public String add(){
         return "add";
     }

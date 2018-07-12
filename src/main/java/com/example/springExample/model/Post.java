@@ -16,15 +16,16 @@ public class Post {
     }
 
 
-    public Post() {
-    }
-
     public Post(String title, String description, String author) {
         this.title = title;
         this.description = description;
         this.author = author;
         allPosts.add(this);
 
+    }
+
+    public Post() {
+        allPosts.add(this);
     }
 
     public String getTitle() {
